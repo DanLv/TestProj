@@ -1,4 +1,4 @@
-package me.dan.testproj;
+package me.dan.app1;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
-import com.bumptech.glide.Glide;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,17 +25,12 @@ public class MainActivity extends AppCompatActivity {
                 //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 //        .setAction("Action", null).show();
 
-                toGlideTest();
+                toTestPage();
             }
         });
-
-        Glide.with(this.getApplicationContext())
-                .load(R.drawable.ic_discovery_banner_loading)
-                //.downloadOnly(400, 400)
-                .preload();
     }
 
-    private void toGlideTest() {
+    private void toTestPage() {
         Intent intent = new Intent(this, SettingsProviderTestActivity.class);
         startActivity(intent);
     }

@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="me.dan.testproj"
+<manifest
+    package="me.dan.testproj"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <permission
+        android:name="com.huami.watch.companion.permission.READ_SETTINGS"
+        android:label="permission_read_settings"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.huami.watch.companion.permission.WRITE_SETTINGS"
+        android:label="permission_write_settings"
+        android:protectionLevel="normal" />
 
     <application
         android:allowBackup="true"
@@ -20,6 +30,14 @@
         </activity>
 
         <activity android:name=".GlideTestActivity" />
+        <activity android:name=".SettingsProviderTestActivity" />
+
+        <provider
+            android:name="com.huami.watch.companion.settings.SettingsProvider"
+            android:authorities="com.huami.watch.companion.settings"
+            android:exported="true"
+            android:readPermission="com.huami.watch.companion.permission.READ_SETTINGS"
+            android:writePermission="com.huami.watch.companion.permission.WRITE_SETTINGS" />
     </application>
 
 </manifest>
