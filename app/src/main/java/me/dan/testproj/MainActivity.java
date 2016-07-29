@@ -13,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.huami.watch.companion.device.DeviceManager;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //toGlideTest();
                 //toUnzip();
+                toRetrieveDeviceInfo(MainActivity.this);
             }
         });
 
@@ -48,6 +51,12 @@ public class MainActivity extends AppCompatActivity {
     private void toUnzip() {
         File file = new File(Environment.getExternalStorageDirectory() + "/agps_data");
         ZipUtil.unzip(file);
+    }
+
+    private void toRetrieveDeviceInfo(Context context) {
+        //DeviceUtil.retrieveAndroidDeviceId(context);
+        //DeviceUtil.retrieveCpuID();
+        DeviceManager.getManager().getDeviceInfoJson(context);
     }
 
     @Override
