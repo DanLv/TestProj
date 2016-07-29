@@ -17,4 +17,21 @@
         android:onClick="onGetClick"
         android:text="Get" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onGetAllNeedSync"
+        android:text="GetAllNeedSync" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onUpdateAllToSynced"
+        android:text="UpdateAllToSynced" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onAddAll"
+        android:text="AddAll" />
 </LinearLayout>

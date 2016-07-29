@@ -12,6 +12,9 @@
         android:label="permission_write_settings"
         android:protectionLevel="normal" />
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -32,12 +35,12 @@
         <activity android:name=".GlideTestActivity" />
         <activity android:name=".SettingsProviderTestActivity" />
 
-        <provider
+        <!--<provider
             android:name="com.huami.watch.companion.settings.SettingsProvider"
             android:authorities="com.huami.watch.companion.settings"
             android:exported="true"
             android:readPermission="com.huami.watch.companion.permission.READ_SETTINGS"
-            android:writePermission="com.huami.watch.companion.permission.WRITE_SETTINGS" />
+            android:writePermission="com.huami.watch.companion.permission.WRITE_SETTINGS" />-->
     </application>
 
 </manifest>

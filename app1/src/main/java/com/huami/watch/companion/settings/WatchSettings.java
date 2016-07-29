@@ -19,6 +19,7 @@ public class WatchSettings {
         ContentValues values = new ContentValues();
         values.put(SettingsEntry.COLUMN_KEY, key);
         values.put(SettingsEntry.COLUMN_VALUE, value);
+        values.put(SettingsEntry.COLUMN_CLOUD_SYNC_STATE, SettingsEntry.SYNC_STATE_NEED_SYNC);
 
         Cursor c = null;
         try {
@@ -67,7 +68,7 @@ public class WatchSettings {
         return value;
     }
 
-    private static class SettingsEntry {
+    public static class SettingsEntry {
         public static final Uri CONTENT_URI = Uri.parse("content://com.huami.watch.companion.settings");
 
         public static final String COLUMN_KEY = "key";
@@ -77,7 +78,11 @@ public class WatchSettings {
 
         public static final String[] COLUMNS_EMPTY = new String[]{};
         public static final String[] COLUMNS_VALUE = new String[]{COLUMN_VALUE,};
+        public static final String[] COLUMNS_KEY_VALUE = new String[]{COLUMN_KEY, COLUMN_VALUE};
         public static final String[] COLUMNS_ALL = new String[]{COLUMN_KEY, COLUMN_VALUE,
                 COLUMN_CLOUD_SYNC_STATE, COLUMN_WATCH_SYNC_STATE,};
+
+        public static final int SYNC_STATE_NEED_SYNC = 0;
+        public static final int SYNC_STATE_SYNCED = 1;
     }
 }
