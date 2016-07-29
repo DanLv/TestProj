@@ -1,1 +1,4 @@
-include ':app', ':app1'
+include ':watchproj', ':watchproj1'
+
+project(':watchproj').projectDir = new File('app/watchproj')
+project(':watchproj1').projectDir = new File('app/watchproj1')
