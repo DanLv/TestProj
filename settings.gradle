@@ -1,4 +1,6 @@
-include ':watchproj', ':watchproj1'
+include ':watchproj', ':watchproj1', ':rxproj', ':danlib'
 
 project(':watchproj').projectDir = new File('app/watchproj')
 project(':watchproj1').projectDir = new File('app/watchproj1')
+project(':rxproj').projectDir = new File('app/rxproj')
+project(':danlib').projectDir = new File('lib/danlib')
